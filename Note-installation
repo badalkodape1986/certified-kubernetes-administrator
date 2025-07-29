@@ -1,0 +1,10 @@
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
+
+
+3. Firewall or Security Groups
+Make sure traffic between nodes is allowed (especially on AWS, Azure, GCP, etc.):
+* Ports: 6443, 10250, 10255, 8472 (Flannel VXLAN), etc.
+
+
+sudo systemctl restart containerd
+sudo systemctl restart kubelet
